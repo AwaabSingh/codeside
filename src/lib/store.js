@@ -15,25 +15,25 @@ import { writable } from 'svelte/store';
 // }
 // export const sessionManager = ('user', {});
 
-const createWritableStore = (key, startValue) => {
-  const { subscribe, set } = writable(startValue);
+// const createWritableStore = (key, startValue) => {
+//   const { subscribe, set } = writable(startValue);
   
-  return {
-    subscribe,
-    set,
-    useLocalStorage: () => {
-      const json = localStorage.getItem(key);
-      if (json) {
-        set(JSON.parse(json));
-      }
+//   return {
+//     subscribe,
+//     set,
+//     useLocalStorage: () => {
+//       const json = localStorage.getItem(key);
+//       if (json) {
+//         set(JSON.parse(json));
+//       }
       
-      subscribe(current => {
-        localStorage.setItem(key, JSON.stringify(current));
-      });
-    }
-  };
-}
+//       subscribe(current => {
+//         localStorage.setItem(key, JSON.stringify(current));
+//       });
+//     }
+//   };
+// }
 
-export const sessionManager = createWritableStore('user', {});
+// export const sessionManager = createWritableStore('user', {});
 
 

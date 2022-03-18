@@ -1,4 +1,4 @@
-import { sessionManager } from '$lib/store'
+// import { sessionManager } from '$lib/store'
 import axios from "axios";
 // export const user = writable(null)
 // import { onMount } from "svelte";
@@ -6,7 +6,7 @@ import axios from "axios";
 // export const user = writable(false)
 
 // onMount(()=>{
-    sessionManager.useLocalStorage()
+    // sessionManager.useLocalStorage()
 // })
 
 
