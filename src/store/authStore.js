@@ -1,13 +1,13 @@
 import { sessionManager } from '$lib/store'
 import axios from "axios";
 // export const user = writable(null)
-// import { onMount } from "svelte";
+import { onMount } from "svelte";
 
 // export const user = writable(false)
 
-// onMount(()=>{
+onMount(()=>{
     sessionManager.useLocalStorage()
-// })
+})
 
 
 
@@ -40,7 +40,6 @@ export const loginUser = async (userData) => {
         const response = await axios.post(API_URL + 'signin', userData, config)
 
         if (response.data) {
-            // localStorage.setItem('user', JSON.stringify(response.data))
             sessionManager.set(response.data.detail)
           }
         
