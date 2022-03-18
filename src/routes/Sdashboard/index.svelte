@@ -1,15 +1,15 @@
 <script>
     import Header from '$lib/Dashboard/Header.svelte'
     import Sidebar from '$lib/Dashboard/Sidebar.svelte'
-    import { sessionManager } from '$lib/store'
-    import { onMount } from 'svelte'
+    // import { userLoc } from '$lib/store'
+    // import { onMount } from 'svelte'
 
-    onMount(async () => {
-        await sessionManager.useLocalStorage();
-        console.log($sessionManager.user)
-    })
+    // onMount(async () => {
+    //     await sessionManager.useLocalStorage();
+    //     console.log($sessionManager.user.email)
+    // })
 
-    
+   
     
 </script>
 
@@ -21,7 +21,7 @@
        </div>
       <div class='flex-1 m-5'>
            <div>
-               <h1>${sessionManager.user}</h1>
+               <!-- <h1>${sessionManager.user.email}</h1> -->
             <div id="default-carousel" data-carousel="slide" class="relative">
 
                 <div class="overflow-hidden relative h-56 rounded-lg sm:h-64 xl:h-80 2xl:h-96">

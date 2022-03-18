@@ -2,23 +2,24 @@
 
 <script>
 
-import {goto} from "$app/navigation";
-  import { registerUser } from '../store/authStore'
+// import {goto} from "$app/navigation";
+  // import { registerUser } from '../store/authStore'
 
 
   const data = {};
   const handleSubmit = async () => {
-      const response = await registerUser(data)
+      // const response = await registerUser(data)
 
-      if(response.status_code === 200) {
-        alert("Welcome to codeside academy")
-        goto('/')
+      // if(response.status_code === 200) {
+      //   alert("Welcome to codeside academy")
+      //   goto('/')
         
-      } else if(response.status_code ===  208) {
-        alert("sorry email already exist")
-      }  else {
-        alert("Invalid credentials")
-      }
+      // } else if(response.status_code ===  208) {
+      //   alert("sorry email already exist")
+      // }  else {
+      //   alert("Invalid credentials")
+      alert('Still in development')
+      // }
      
   }
 
