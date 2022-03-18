@@ -1,6 +1,6 @@
 // store.js
-// import { writable } from 'svelte/store';
-// import { browser } from '$app/env';
+import { writable } from 'svelte/store';
+import { browser } from '$app/env';
 
 // const preStore = (key, initial) => {
 //    const pre = localStorage.getItem(key);
@@ -16,25 +16,25 @@
 // }
 // export const sessionManager = ('user', {});
 
-// const createWritableStore = (key, startValue) => {
-//   const { subscribe, set } = writable(startValue);
+const createWritableStore = (key, startValue) => {
+  const { subscribe, set } = writable(startValue);
   
-//   return {
-//     subscribe,
-//     set,
-//     useLocalStorage: () => {
-//       const json = browser && (localStorage.getItem(key))
-//       if (json) {
-//         set(JSON.parse(json));
-//       }
+  return {
+    subscribe,
+    set,
+    useLocalStorage: () => {
+      const json = browser && (localStorage.getItem(key))
+      if (json) {
+        set(JSON.parse(json));
+      }
       
-//       subscribe(current => {
-//          browser && localStorage.setItem(key, JSON.stringify(current))
-//       });
-//     }
-//   };
-// }
-// export const sessionManager = createWritableStore('user', {});
+      subscribe(current => {
+         browser && localStorage.setItem(key, JSON.stringify(current))
+      });
+    }
+  };
+}
+export const sessionManager = createWritableStore('user', {});
 
 // export const userLoc = writable(
 //    browser && (localStorage.getItem('user'))

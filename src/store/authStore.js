@@ -1,4 +1,4 @@
-// import {  userData } from '$lib/store'
+import {  sessionManager } from '$lib/store'
 import axios from "axios";
 // export const user = writable(null)
 // import { onMount } from "svelte";
@@ -17,7 +17,7 @@ export const registerUser = async (userData) => {
      try {
          const response = await axios.post(API_URL + 'signup', userData);
          if(response.data) {
-            // userData('user', response.data.detail);
+            sessionManager.set(response.data.detail)
          }
 
          return response.data;
@@ -38,7 +38,7 @@ export const loginUser = async (userData) => {
         const response = await axios.post(API_URL + 'signin', userData, config)
 
         if (response.data) {
-            // userData('user', response.data);
+            sessionManager.set(response.data.detail)
           }
         
           return response.data

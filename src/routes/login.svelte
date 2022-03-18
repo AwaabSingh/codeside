@@ -1,7 +1,7 @@
 <script>
 // @ts-nocheck
-// import {goto} from '$app/navigation';
-// import {loginUser} from '../store/authStore'
+import {goto} from '$app/navigation';
+import {loginUser} from '../store/authStore'
 // import { sessionManager } from '$lib/store';
 
 
@@ -10,17 +10,17 @@
 const data = {}
   
   const handleSubmit = async () => {
-      //  const response = await loginUser(data);
+       const response = await loginUser(data);
 
-      //   if(response.status_code === 200) {
-      //      alert('welcome back')
-      //      goto('/Sdashboard')
-      //   } else{
-      //     alert('Invalid Credentials');
+        if(response.status_code === 200) {
+           alert('welcome back')
+           goto('/Sdashboard')
+        } else{
+          alert('Invalid Credentials');
          
-      //   }
+        }
         // console.log(response);
-       alert('still in development')
+     
       
   
   }
