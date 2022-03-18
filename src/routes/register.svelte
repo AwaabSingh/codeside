@@ -1,7 +1,7 @@
 
 
 <script>
-// @ts-nocheck
+
 import {goto} from "$app/navigation";
   import { registerUser } from '../store/authStore'
 
