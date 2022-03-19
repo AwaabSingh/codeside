@@ -1,7 +1,7 @@
 <script context='module'>
-       export async function load({ fetch }) {
+       export async function load({ fetch,params }) {
          const res =await fetch(
-             `https://aqueous-beyond-13704.herokuapp.com/allcourse`
+             `https://aqueous-beyond-13704.herokuapp.com/allcourse/${params.id}`
          );
 
          const data = await res.json()

@@ -158,7 +158,7 @@ export let categories;
                 <h3 class="md:text-3xl text-xl font-Nunito font-bold px-3 py-3 text-drblue"> Become a Instructor</h3>
                <p class='text-sm '>Join millons of people from around the world learning together.online learing is as easy and natural as chatting</p>
                 <div class='flex items-center my-10 mx-20'>
-                    <a href ="/" class='py-5 px-8 bg-transparent text-drblue hover:bg-drblue border hover:text-white border-drblue rounded-xl font-bold'>Apply Now</a>
+                    <a href ="/" class='py-5 px-8 bg-transparent text-xl md:text-2xl text-drblue hover:bg-drblue border hover:text-white border-drblue rounded-xl font-bold'>Apply Now</a>
                 </div>
             </div>
        </div>
@@ -173,7 +173,7 @@ export let categories;
                 <h3 class="md:text-3xl text-xl font-Nunito font-bold px-3 py-3 text-drblue"> Become a Student</h3>
                <p class='text-sm '>Join millons of people from around the world learning together.online learing is as easy and natural as chatting</p>
                 <div class='flex items-center my-10 mx-20'>
-                    <a href ="/" class='py-5 px-8 bg-transparent text-drblue hover:bg-drblue border hover:text-white border-drblue rounded-xl font-bold'>Apply Now</a>
+                    <a href ="/" class='py-5 px-8 bg-transparent text-xl md:text-2xl text-drblue hover:bg-drblue border hover:text-white border-drblue rounded-xl font-bold'>Apply Now</a>
                 </div>
             </div>
        </div>

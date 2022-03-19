@@ -6,7 +6,7 @@
 
 <div class="max-w-sm font-Nunito">
     <div class="bg-drlue relative shadow-lg hover:shadow-xl transition duration-500 rounded-lg ">
-      <a sveltekit:prefetch href={`/course/${course.id}`} class="">
+      <a sveltekit:prefetch href='/' class="">
         <img class="rounded-t-lg" src='inst.jpeg' alt="" />
       </a>
       <div class="pt-3 px-10 rounded-lg bg-white">
@@ -17,7 +17,7 @@
     <div class='flex justify-around items-center text-gray-400 m-3'>
         <section class='flex justify-between '>
           <i class='bx bx-paperclip icon ' ></i>
-          <p> 6 lesson</p>
+          <p class='text-sm md:text-md'> 6 lesson</p>
         </section>
          <section class='flex justify-between'>
           <i class='bx bx-time icon'></i>
