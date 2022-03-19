@@ -16,15 +16,15 @@
 
     <div class='flex justify-around items-center text-gray-400 m-3'>
         <section class='flex justify-between '>
-          <i class='bx bx-paperclip icon ' ></i>
+          <i class='bx bx-paperclip icon hidden md:block ' ></i>
           <p class='text-sm md:text-md'> 6 lesson</p>
         </section>
          <section class='flex justify-between'>
-          <i class='bx bx-time icon'></i>
+          <i class='bx bx-time icon hidden md:block'></i>
           <p>3h 56m</p>
         </section>
          <section class='flex justify-between'>
-          <i class='bx bx-bar-chart-alt icon'></i>
+          <i class='bx bx-bar-chart-alt icon hidden md:block'></i>
           <p>Beginner</p>
         </section>
     </div>
