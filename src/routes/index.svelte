@@ -63,7 +63,7 @@ export let categories;
             <p class='text-md'> Choose from 183,000 online video courses with new additions published every month</p>
     
           </div>
-        <div class='container  grid grid-cols-1 gap-4 md:grid-cols-2 lg:grid-cols-3 py-3 px-10'>
+        <div class='grid grid-cols-1 gap-4 md:grid-cols-2 lg:grid-cols-3 py-3 px-10'>
           
             {#each courses as course}  
              <CourseCard {course}/>
@@ -76,7 +76,7 @@ export let categories;
         <div class="w-full bg-cover bg-center mb-5" style="height:20rem; background-image: url(https://images.unsplash.com/photo-1434030216411-0b793f4b4173?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxzZWFyY2h8Mnx8c3R1ZGVudCUyMHdpdGglMjBsYXB0b3xlbnwwfHwwfHw%3D&auto=format&fit=crop&w=500&q=60);">
           <div class="flex items-center justify-center h-full w-full bg-gray-900 bg-opacity-50 ">
               <div class="text-center">
-                  <h1 class="text-white md:text-2xl  uppercase md:text-3xl font-bold">Find the right path for you to learn</h1>
+                  <h1 class="text-white uppercase md:text-3xl font-bold">Find the right path for you to learn</h1>
                   <p class='text-center text-white'>Match your goals to our program,explore your options and  map out your path to success</p> <br/>
                   <a href="/" class='py-5 mt-10 px-8 bg-transparent text-white hover:bg-drblue border border-drblue rounded-xl font-bold'>Get Started Now</a>
               </div>
