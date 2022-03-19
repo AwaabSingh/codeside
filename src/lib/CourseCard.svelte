@@ -10,13 +10,13 @@
         <img class="rounded-t-lg" src='inst.jpeg' alt="" />
       </a>
       <div class="pt-3 px-10 rounded-lg bg-white">
-        <h6 class="text-gray-700 font-bold text-2xl  hover:text-gray-900 hover:cursor-pointer">{course.title}</h6>
+        <h6 class="text-gray-700 font-bold md:text-2xl  hover:text-gray-900 hover:cursor-pointer">{course.title}</h6>
         <p class="text-gray-700 tracking-wide mb-3 line-clamp-3">{course.description}</p>
       </div>
 
     <div class='flex justify-around items-center text-gray-400 m-3'>
         <section class='flex justify-between '>
-          <i class='bx bx-paperclip icon hidden md:block ' ></i>
+          <i class='bx bx-paperclip icon hidden md:block' ></i>
           <p class='text-sm md:text-md'> 6 lesson</p>
         </section>
          <section class='flex justify-between'>
