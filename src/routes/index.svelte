@@ -155,7 +155,7 @@ export let categories;
                 <img src="/inst.jpeg" class="w rounded-xl" alt="">
             </div>
             <div class='md:mx-20 md:my-10'>
-                <h3 class="md:text-3xl text-xl font-Nunito font-bold px-3 py-3 text-drblue"> Become a Instructor</h3>
+                <h3 class="md:text-3xl text-xl font-Nunito font-bold px-3 py-3 text-drblue"> Become an Instructor</h3>
                <p class='text-sm '>Join millons of people from around the world learning together.online learing is as easy and natural as chatting</p>
                <div class='flex items-center text-center my-14 md:mx-20 mx-12'>
                 <a href ="/" class='py-5 px-8 bg-transparent text-sm md:text-2xl text-drblue hover:bg-drblue border hover:text-white border-drblue rounded-xl font-bold'>Apply Now</a>
