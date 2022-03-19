@@ -92,7 +92,7 @@ export let categories;
         <div class=''>
              <h3 class='text-xl md:text-5xl font-bold font-Nunito text-drblue py-3 text-center'>Online learning solution that meet your needs.</h3>
              <p class='text-lgblue px-5 py-3 text-center font-Nunito'>Use the list below to bring attention to your product's key  differentiator</p>
-              <section class='flex flex-col'>
+              <section class='flex flex-col mx-3'>
                    <div class='md:px-12 py-3 flex justify-between items-center'>
                     <i class='bx bxl-microsoft-teams  mx-3 icon bg-csyellow py-5 px-5'></i> 
                     <!-- <i class='bx bxl-microsoft-teams my-5  icon bg-green-300  mx-3 px-5 py-5 '></i> -->
