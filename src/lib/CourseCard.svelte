@@ -11,7 +11,7 @@
       </a>
       <div class="pt-3 px-10 rounded-lg bg-white">
         <h6 class="text-gray-700 font-bold text-2xl  hover:text-gray-900 hover:cursor-pointer">{course.title}</h6>
-        <p class="text-gray-700 tracking-wide mb-3">{course.description}</p>
+        <p class="text-gray-700 tracking-wide mb-3 line-clamp-3">{course.description}</p>
       </div>
 
     <div class='flex justify-around items-center text-gray-400 m-3'>
