@@ -1,9 +1,6 @@
-import {  sessionManager } from '$lib/store'
-import axios from "axios";
-// export const user = writable(null)
-// import { onMount } from "svelte";
 
-// export const user = writable(false)
+import axios from "axios";
+import { useLoc } from './loc'
 
 
 
@@ -16,10 +13,10 @@ const API_URL = 'https://aqueous-beyond-13704.herokuapp.com/';
 export const registerUser = async (userData) => {
      try {
          const response = await axios.post(API_URL + 'signup', userData);
+         
          if(response.data) {
-            sessionManager.set(response.data.detail)
+            useLoc.set(response.data.detail)
          }
-
          return response.data;
      } catch (error) {
          console.log(error)
@@ -38,7 +35,7 @@ export const loginUser = async (userData) => {
         const response = await axios.post(API_URL + 'signin', userData, config)
 
         if (response.data) {
-            sessionManager.set(response.data.detail)
+            useLoc.set(response.data)
           }
         
           return response.data

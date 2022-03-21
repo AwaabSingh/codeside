@@ -2,32 +2,29 @@
 // @ts-nocheck
 import {goto} from '$app/navigation';
 import {loginUser} from '../store/authStore'
-// import { sessionManager } from '$lib/store';
 
 
-
+let isSuccess = 'Welcome Back'
+let isError = 'Invalid Credentials'
 
 const data = {}
   
   const handleSubmit = async () => {
        const response = await loginUser(data);
+       
+       if(response.status_code === 200) {
+          alert(isSuccess);
+          goto('/Sdashboard')
+       }else {
+         alert(isError)
+       }
 
-        if(response.status_code === 200) {
-           alert('welcome back')
-           goto('/Sdashboard')
-        } else{
-          alert('Invalid Credentials');
-         
-        }
-        // console.log(response);
-     
-      
-  
   }
 
 </script>
 
-<main class="antialiased bg-gray-200 text-gray-900 font-sans">
+
+<main class="antialiased bg-gray-200 text-gray-900 font-sans py-10">
    
     <div class="flex items-center h-screen w-full">
       <div class="w-full bg-white rounded-2xl shadow-lg p-8 m-4 md:max-w-lg md:mx-auto">
@@ -45,7 +42,22 @@ const data = {}
           <button type="submit" class="bg-lgblue hover:bg-drblue text-white  text-sm font-semibold px-4 py-2 rounded w-full">Sign In</button>
         </form>
         <a class='flex justify-center mt-5' href="/login">Forgot password?</a>
-        <p class="text-center mt-8">Don't Have an account? <a href='/register' class='text-drblue'> Sign Up</a> </p>
+        <p class="text-center mt-8 mb-3">Don't Have an account? <a href='/register' class='text-drblue'> Sign Up</a> </p>
+        <div>
+          <hr>
+        </div>
+        <div class="flex items-center space-x-2 justify-center mt-3">
+          
+          <a href="/#">
+              <ion-icon name="logo-facebook" class="p-2 rounded-full text-2xl bg-gray-100 text-blue-600 md hydrated" role="img" aria-label="logo facebook"></ion-icon>
+          </a>
+          <a href="/#">
+              <ion-icon name="logo-twitter" class="p-2 rounded-full text-2xl bg-gray-100 text-indigo-500 md hydrated" role="img" aria-label="logo twitter"></ion-icon>
+          </a>
+          <a href="/#">
+              <ion-icon name="logo-github" class="p-2 rounded-full text-2xl bg-gray-100 md hydrated" role="img" aria-label="logo github"></ion-icon>
+          </a>
+      </div>
     </div>
   </div>
 </main>
