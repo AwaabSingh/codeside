@@ -6,7 +6,7 @@ import { onMount } from 'svelte';
 
     onMount(async () => {
        await useLoc
-       console.log($useLoc.detail.user.email)
+    //    console.log($useLoc.detail.user.email)
     })
    
  

@@ -12,7 +12,7 @@ import {goto} from "$app/navigation";
 
       if(response.status_code === 200) {
         alert("Welcome to codeside academy")
-        goto('/')
+        goto('/Sdashboard')
         
       } else if(response.status_code ===  208) {
         alert("sorry email already exist")

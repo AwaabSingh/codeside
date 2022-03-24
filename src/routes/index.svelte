@@ -26,15 +26,17 @@
 
 <script>
  import CourseCard from '$lib/CourseCard.svelte'
-
+ import { Splide, SplideSlide } from '@splidejs/svelte-splide';
+ import '@splidejs/splide/dist/css/themes/splide-default.min.css';
 
 export let courses;
 export let categories;
- 
+
 </script>
 
 
 <main class='h-auto'>
+   
     <header>
 
   
@@ -63,12 +65,15 @@ export let categories;
             <p class='text-md'> Choose from 183,000 online video courses with new additions published every month</p>
     
           </div>
-        <div class='grid grid-cols-1 gap-4 md:grid-cols-2 lg:grid-cols-3 py-3 px-10'>
           
-            {#each courses as course}  
-             <CourseCard {course}/>
+        <div class='grid grid-cols-1 gap-4 md:grid-cols-2 lg:grid-cols-3 py-3 px-16'>
+           
+            {#each courses as course}    
+            <CourseCard {course}/>
             {/each}
-    </div>      
+       
+    </div>     
+
   </section>
 
   <section>
@@ -189,4 +194,5 @@ export let categories;
      color: #6363A3;
      border-radius: 50%;
   }
+  
 </style>

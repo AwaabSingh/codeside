@@ -39,7 +39,9 @@
             </a>
         </li>
         <li class='px-2'>
-            <a href='/tt'>cart</a>
+            <a href='/cart'>
+                <i class='bx bxs-cart-add icon'></i> 
+            </a>
         </li>
     </ul>
 </header>

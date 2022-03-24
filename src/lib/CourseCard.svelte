@@ -1,13 +1,32 @@
 
 <script>
+import { onMount } from 'svelte';
+
   export let course;
+  // export let cosId
+  import { useLoc } from '../store/loc'
+
+onMount(async () => {
+   await useLoc
+    // console.log($useLoc.detail.access_token)
+    
+})
+// export let courseid = course.publickKey
+// console.log(courseId)
+
+  // const handleAddCart = () => {
+    
+  // }
+//  console.log(course)
+
 
 </script>
 
 <div class="max-w-sm font-Nunito">
     <div class="bg-drlue relative shadow-lg hover:shadow-xl transition duration-500 rounded-lg ">
-      <a sveltekit:prefetch href='/' class="">
+      <a sveltekit:prefetch href={`/course/${course.pk}`} >
         <img class="rounded-t-lg" src='inst.jpeg' alt="" />
+        <!-- <span on:click={cosId=course.publickKey}></span> -->
       </a>
       <div class="pt-3 px-10 rounded-lg bg-white">
         <h6 class="text-gray-700 font-bold md:text-2xl text-md  hover:text-gray-900 hover:cursor-pointer">{course.title}</h6>
@@ -44,16 +63,18 @@
       <div class="absolute top-2 left-2 py-2 px-4 bg-drblue text-white rounded-lg">
          <span class="text-md">Bestseller</span>
        </div>
-      <!-- <div class="absolute top-2 right-2 py-2 px-4 bg-white rounded-lg">
-        <span class="text-md">${course.price}</span>
+      <!-- <div class="absolute top-2 right-2 py-1 px-3 bg-white rounded-lg" on:click={handleAddCart}>
+        <span class="text-md">
+          <i class='bx bx-heart'></i>
+        </span>
       </div> -->
     </div>
   </div> 
 
   <style>
     .icon {
-      color: gray;
-      font-size: 20px;
+      color: #6363A3;
+      font-size:20px;
       padding: 0 5px;
     }
   </style>

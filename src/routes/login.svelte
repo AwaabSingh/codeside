@@ -13,7 +13,7 @@ const data = {}
        const response = await loginUser(data);
        
        if(response.status_code === 200) {
-          alert(isSuccess);
+         alert( isSuccess)
           goto('/Sdashboard')
        }else {
          alert(isError)
@@ -42,7 +42,7 @@ const data = {}
           <button type="submit" class="bg-lgblue hover:bg-drblue text-white  text-sm font-semibold px-4 py-2 rounded w-full">Sign In</button>
         </form>
         <a class='flex justify-center mt-5' href="/login">Forgot password?</a>
-        <p class="text-center mt-8 mb-3">Don't Have an account? <a href='/register' class='text-drblue'> Sign Up</a> </p>
+        <button  class="text-center mt-8 mb-3">Don't Have an account? <a href='/register' class='text-drblue'> Sign Up</a> </button>
         <div>
           <hr>
         </div>

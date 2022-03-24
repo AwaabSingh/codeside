@@ -1,24 +1,45 @@
 <script context='module'>
-       export async function load({ fetch,params }) {
-         const res =await fetch(
-             `https://aqueous-beyond-13704.herokuapp.com/allcourse/${params.id}`
-         );
+    export async function load({ fetch, params }) {
+        console.log(params.id)
+      const res =await fetch(
+          `https://aqueous-beyond-13704.herokuapp.com/allcourse`
+      );
 
-         const data = await res.json()
+    //   const resId =await fetch(
+    //       `https://aqueous-beyond-13704.herokuapp.com/getcoursebyid/${params.publicKey}`
+    //   );
 
-        //  console.log(data);
-         if(res.ok) {
-             return {
-                 props: {
-                     courses: data.detail,
-                 }
-             }
-         }
-        }
+      const data = await res.json()
+    //   const dataId = await resId.json()
+
+    //   console.log(dataId);
+      if(res.ok) {
+          return {
+              props: {
+                  courses: data.detail,
+              }
+          }
+      }
+     }
 </script>
 
 <script>
+import { onMount } from "svelte";
+
     export let courses;
+  
+
+    // console.log($page.url)
+    
+
+  
+  
+  
+    onMount(async () => {
+    
+        // const { data } = await axios.get()
+
+    })
    
 </script>
 
@@ -46,21 +67,21 @@
         </header>
         <section class='md:flex md:justify-between  py-10'>
              <div>
-                <nav class='flex list-none my-5 mx-3 md:px-28 justify-between bg-white shadow py-3 px-5 border border-lgblue rounded-xl font-Nunito'>
+                <nav class='flex text-sm md:text-md list-none md:my-5 md:mx-3 md:px-28 justify-between bg-white shadow py-3 px-5 border border-lgblue rounded-xl font-Nunito'>
                     <li class=' hover:text-drblue '>
-                      <a href="" class='md:px-5'>Overview</a>
+                      <a href="/#" class='md:px-5 pr-2'>Overview</a>
                     </li>
                     <li class=' hover:text-drblue'>
-                      <a href="" class='md:px-5'>Curriculum</a>
+                      <a href="/#" class='md:px-5 pr-2'>Curriculum</a>
                  </li>
                  <li class=' hover:text-drblue'>
-                  <a href="" class="md:px-5">FAQ</a>
+                  <a href="/#" class="md:px-5 pr-2">FAQ</a>
              </li>
              <li class=' hover:text-drblue'>
-              <a href="" class="md:px-5">Announcement</a>
+              <a href="/#" class="md:px-5 pr-2">Announcement</a>
          </li>
          <li class=' hover:text-drblue'>
-          <a href="" class="md:px-5">Reviews</a>
+          <a href="/#" class="md:px-5 pr-2">Reviews</a>
      </li>
                </nav>
            <!-- desc -->
@@ -162,11 +183,18 @@
                    </div> 
                      
                  </div>
-                 <div class='py-5 px-5 text-center  bg-drblue mt-3 rounded-xl text-white hover:bg-lgblue'>
+                 <div class='py-3 px-4  text-center  bg-drblue mt-3 rounded-xl text-white hover:bg-lgblue'>
+                    <button>
+                        Add To Cart
+                    </button>
+                 </div>
+                 <div class='py-3 px-4 text-center  bg-drblue mt-3 rounded-xl text-white hover:bg-lgblue'>
                     <a href="/cart"  >
                         Enroll Now
                     </a>
                  </div>
+                    
+               
              </div>
         
                    
