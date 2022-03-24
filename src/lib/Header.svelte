@@ -62,7 +62,7 @@
         </ul> 
 </nav>  -->
 
-<nav>
+<nav class='border-b border-gray-200'>
     <input type="checkbox" id="check">
     <label for="check" class="checkbtn">
       <i class="fas fa-bars"></i>
@@ -123,10 +123,10 @@ nav ul li a{
   text-transform: uppercase;
   border-radius: 10px;
 }
- a.active,a:hover{
+ /* a.active,a:hover{
   background: #4F4F86;
   transition: .5s;
-} 
+}  */
  .checkbtn{ 
    font-size: 30px;
   color: black;

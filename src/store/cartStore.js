@@ -5,6 +5,7 @@ const API_URL = 'https://aqueous-beyond-13704.herokuapp.com';
 import { writable } from 'svelte/store'
 
 export const getCart = writable([])
+// export const addCart = writable([])
 
 export  const config = {
     headers: {
@@ -28,3 +29,16 @@ export  const config = {
 // }
 
 // getCart()
+ export const addCart = async (coursePk) => {
+     try {
+         
+        const response = await axios.get(API_URL + `getcousebyid?coursePk=${coursePk}`)
+
+         console.log(response)
+
+        return response.data
+     } catch (error) {
+          console.log(error)
+     }
+}
+

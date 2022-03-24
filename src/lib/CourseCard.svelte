@@ -1,32 +1,33 @@
 
 <script>
 import { onMount } from 'svelte';
+import { useLoc } from '../store/loc'
+// import axios from 'axios'
+import { addCart } from '../store/cartStore'
 
   export let course;
-  // export let cosId
-  import { useLoc } from '../store/loc'
+
+ 
 
 onMount(async () => {
    await useLoc
     // console.log($useLoc.detail.access_token)
+
+    // get courses by  coursePk
+    // const { data } = await axios.get(`getcousebyid?coursePk=${coursePk}`)
     
 })
-// export let courseid = course.publickKey
-// console.log(courseId)
 
-  // const handleAddCart = () => {
-    
-  // }
-//  console.log(course)
 
 
 </script>
 
 <div class="max-w-sm font-Nunito">
     <div class="bg-drlue relative shadow-lg hover:shadow-xl transition duration-500 rounded-lg ">
-      <a sveltekit:prefetch href={`/course/${course.pk}`} >
+      <a href={`/course/${course.id}`} >
         <img class="rounded-t-lg" src='inst.jpeg' alt="" />
         <!-- <span on:click={cosId=course.publickKey}></span> -->
+       
       </a>
       <div class="pt-3 px-10 rounded-lg bg-white">
         <h6 class="text-gray-700 font-bold md:text-2xl text-md  hover:text-gray-900 hover:cursor-pointer">{course.title}</h6>
@@ -73,7 +74,7 @@ onMount(async () => {
 
   <style>
     .icon {
-      color: #6363A3;
+      /* color: #6363A3; */
       font-size:20px;
       padding: 0 5px;
     }

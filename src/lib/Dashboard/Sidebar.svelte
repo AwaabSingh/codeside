@@ -1,9 +1,12 @@
 <script>
    import { onMount } from 'svelte';
     import { useLoc } from '../../store/loc'
+    import axios from 'axios'
 
     onMount(async () => {
        await useLoc
+
+      
        
     })
 
@@ -51,6 +54,12 @@
               <span class="flex-1 ml-3 whitespace-nowrap">Profile</span>
            </a>
         </li>
+        <li>
+         <a href="/whislist" class="flex items-center p-2 text-base font-normal text-white rounded-lg  hover:bg-lgblue ">
+          <i class="fa-solid fa-compass text-gray-300 "></i>
+            <span class="flex-1 ml-3 whitespace-nowrap">Wishlist</span>
+         </a>
+      </li>
         <li>
            <a href="/text" class="flex items-center p-2 text-base font-normal text-white rounded-lg  hover:bg-lgblue ">
             <i class="fa-solid fa-compass text-gray-300 "></i>

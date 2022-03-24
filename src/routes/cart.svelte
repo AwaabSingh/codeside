@@ -19,8 +19,9 @@ import { onMount } from 'svelte';
     }
 }
       const { data } = await axios.get('https://aqueous-beyond-13704.herokuapp.com/getcart', config);
-      console.log(data.detail)
+    //   console.log(data.detail)
       $getCart = data.detail
+      console.log($getCart)
      
   })
  

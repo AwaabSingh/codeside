@@ -15,6 +15,7 @@ export const components = [
 	() => import("../../src/routes/Sdashboard/profile.svelte"),
 	() => import("../../src/routes/checkout.svelte"),
 	() => import("../../src/routes/register.svelte"),
+	() => import("../../src/routes/whislist.svelte"),
 	() => import("../../src/routes/course/[id].svelte"),
 	() => import("../../src/routes/login.svelte"),
 	() => import("../../src/routes/cart.svelte"),
@@ -33,8 +34,9 @@ export const dictionary = {
 	"Sdashboard/profile": [[3, 11], []],
 	"checkout": [[0, 12], [1]],
 	"register": [[0, 13], [1]],
-	"course/[id]": [[0, 14], [1]],
-	"login": [[0, 15], [1]],
-	"cart": [[0, 16], [1]],
-	"test": [[0, 17], [1]]
+	"whislist": [[0, 14], [1]],
+	"course/[id]": [[0, 15], [1]],
+	"login": [[0, 16], [1]],
+	"cart": [[0, 17], [1]],
+	"test": [[0, 18], [1]]
 };
