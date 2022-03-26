@@ -5,15 +5,10 @@ import axios from "axios"
 let pk =   $page.params.publickKey
 let courseDetail = {}
 
-
-<script>
-     export let courseDetail;
-    import { page } from '$app/stores';
-   import axios from 'axios'
-import { onMount } from 'svelte';
+   
    import { useLoc } from '../../store/loc'
 
-     const pk = $page.params.publickKey;
+
 
     onMount(async () => {
         await useLoc
@@ -33,16 +28,13 @@ import { onMount } from 'svelte';
     
 </script>
 
-  })
 
-
-</script>
 
 
 <main class=' md:px-20 px-5 bg-gray-200' >
     <!-- <header class='bg-white  h-60 rounded-b-xl  shadow-lg border-2 border-drblue border-t-0'>
          <h1 class='text-center text-lgblue py-10 text-2xl md:text-5xl font-bold font-Nunito'>{courseDetail.title}</h1>
-        
+        z
          <div class='flex mx-8 my-5 text-white font-Nunito'>
            <div class='flex'>
             <p class='px-3 py-1 text-sm text-white bg-drblue rounded font-bold mx-5'>4.0</p>
