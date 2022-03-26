@@ -3,25 +3,28 @@ import { onMount } from "svelte";
 import { page } from "$app/stores";
 import axios from "axios"
 import { useLoc } from '../../store/loc'
+import { goto } from "$app/navigation";
+
 
 let pk =   $page.params.publickKey
 let courseDetail = {}
 let cartData = {}
+let message ;
    
 
 
 
     onMount(async () => {
         await useLoc
-
+      
         const response = await axios.get(`https://aqueous-beyond-13704.herokuapp.com/getcousebyid/${pk}`)
         courseDetail = response.data.detail
     })
   
     const addCart = async () => {
       try {
-        const config = {headers:
-                             {
+        const config = {
+            headers:  {
                                'user-token': ` ${$useLoc.detail.access_token}`,
                                'content-type': 'application/json'
                               }}
@@ -29,10 +32,14 @@ let cartData = {}
         console.log(cartData);
 
          const response = await axios.post('https://aqueous-beyond-13704.herokuapp.com/addcart', cartData, config)
-         console.log(response)
+         if(response.data.status_code === 201){
+             goto('/Sdashboard')
+         } else {
+             message = 'Something went wrong'
+         }
         
       } catch (error) {
-        alert(error)
+        message = RangeError
         
       }
         
@@ -220,11 +227,19 @@ let cartData = {}
                </div> 
                  
              </div>
+            
+             <!-- <div  class='py-3 px-4  text-center  bg-drblue mt-3 rounded-xl text-white hover:bg-lgblue'>
+                <a href='/login'>
+                    You need to be logged in
+                </a>
+             </div> -->
+            
              <div  class='py-3 px-4  text-center  bg-drblue mt-3 rounded-xl text-white hover:bg-lgblue'>
                 <button on:click={addCart} >
                     Add To Cart
                 </button>
              </div>
+            
              <!-- <div class='py-3 px-4 text-center  bg-drblue mt-3 rounded-xl text-white hover:bg-lgblue'>
                 <a href="/cart"  >
                     Enroll Now
