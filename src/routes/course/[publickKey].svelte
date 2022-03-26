@@ -231,27 +231,5 @@ import axios from 'axios';
              
       
     </section>
-    <!-- <section class='flex m-12 justify-between md:flex-row'>
-      <div>
-          
-          <nav class='flex justify-between items-center bg-white px-5 py-5 border border-lgblue rounded-xl list-none'>
-              <li class='px-5 font-Nunito text-drblue hover:text-lgblue'>
-                  <a href="">Overview</a>
-              </li>
-              <li class='px-5 font-Nunito text-drblue hover:text-lgblue'>
-                 <a href="">Curriculum</a>
-              </li>
-              <li class='px-5 font-Nunito text-drblue hover:text-lgblue'>
-                  <a href="" class="">FAQ</a>
-              </li>
-              <li class='px-5 font-Nunito text-drblue hover:text-lgblue'>
-                <a href="" class="">Announcement</a>
-            </li>
-            <li class='px-5 font-Nunito text-drblue hover:text-lgblue'>
-                <a href="" class="">Reviews</a>
-            </li>
-          </nav>
-      </div>
-      <div>X</div>
-    </section> -->
+   
 </main>
