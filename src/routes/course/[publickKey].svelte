@@ -1,21 +1,10 @@
-<script context='module'>
-    export async function load({ fetch, params }) {
-        const pk = params.publickKey;
-         const res =await fetch(
-            `https://aqueous-beyond-13704.herokuapp.com/getcousebyid?coursePk=${pk}`
-         );
+<script>
+import { onMount } from "svelte";
+import { page } from "$app/stores";
+import axios from "axios"
+let pk =   $page.params.publickKey
+let courseDetail = {}
 
-         const course = await res.json()
-
-         if(res.ok) {
-             return {
-                 props: { 
-                   courseDetail: course.detail
-                 }
-             }
-         }
-    }
-</script>
 
 <script>
      export let courseDetail;
@@ -44,24 +33,11 @@ import { onMount } from 'svelte';
     
 </script>
 
-<!-- <script>
-    import { page } from '$app/stores';
-import axios from 'axios';
-    import { onMount } from 'svelte';
-    //   console.log($page.params.publickKey)
-      const pk = $page.params.publickKey
-      let course = []
+  })
 
-      onMount(async ()=>{
-       const  { data } = await axios.get(`https://aqueous-beyond-13704.herokuapp.com/getcousebyid?coursePk=${pk}`)
-         
-        return data
-         
-      })
 
-     
+</script>
 
-</script> -->
 
 <main class=' md:px-20 px-5 bg-gray-200' >
     <!-- <header class='bg-white  h-60 rounded-b-xl  shadow-lg border-2 border-drblue border-t-0'>
