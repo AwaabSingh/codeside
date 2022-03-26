@@ -2,31 +2,40 @@
 import { onMount } from "svelte";
 import { page } from "$app/stores";
 import axios from "axios"
+import { useLoc } from '../../store/loc'
+
 let pk =   $page.params.publickKey
 let courseDetail = {}
-
+let cartData = {}
    
-   import { useLoc } from '../../store/loc'
 
 
 
     onMount(async () => {
         await useLoc
 
-        const response = await axios.get(`https://aqueous-beyond-13704.herokuapp.com/getcousebyid?coursePk=${pk}`)
-        // console.log(response);
+        const response = await axios.get(`https://aqueous-beyond-13704.herokuapp.com/getcousebyid/${pk}`)
         courseDetail = response.data.detail
     })
   
     const addCart = async () => {
-        const config = {
-        headers: {
-            'user-token': ` ${$useLoc.detail.access_token}`
-        }
-    }
+      try {
+        const config = {headers:
+                             {
+                               'user-token': ` ${$useLoc.detail.access_token}`,
+                               'content-type': 'application/json'
+                              }}
+        cartData.courseKey = pk
+        console.log(cartData);
 
-         const response = await axios.post('https://aqueous-beyond-13704.herokuapp.com/addcart', pk, config)
+         const response = await axios.post('https://aqueous-beyond-13704.herokuapp.com/addcart', cartData, config)
          console.log(response)
+        
+      } catch (error) {
+        alert(error)
+        
+      }
+        
      }
 
     
