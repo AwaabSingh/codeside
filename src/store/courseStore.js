@@ -3,6 +3,7 @@ import { writable } from 'svelte/store'
 import axios from 'axios'
 
 export const courses = writable([])
+export const getCourse = writable(null)
 // export const getCoursesbyCat = writable([])
 
 const API_URL = 'https://aqueous-beyond-13704.herokuapp.com/';

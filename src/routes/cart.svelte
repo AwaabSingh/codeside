@@ -2,7 +2,7 @@
     import axios from 'axios';
     import { getCart, delCart } from '../store/cartStore'
     import { onMount } from 'svelte';
-      import { useLoc } from '../store/loc'
+    import { useLoc } from '../store/loc'
       
     //   export let cosPk;
       onMount(async () => {
@@ -17,7 +17,6 @@
           const { data } = await axios.get('https://aqueous-beyond-13704.herokuapp.com/getcart', config);
         //   console.log(data.detail)
           $getCart = data.detail
-        //   console.log($getCart)
          
       })
 
