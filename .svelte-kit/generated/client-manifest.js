@@ -16,13 +16,7 @@ export const components = [
 	() => import("../../src/routes/checkout.svelte"),
 	() => import("../../src/routes/register.svelte"),
 	() => import("../../src/routes/whislist.svelte"),
-<<<<<<< HEAD
 	() => import("../../src/routes/course/[publickKey].svelte"),
-=======
-	() => import("../../src/routes/course/dgh.svelte"),
-	() => import("../../src/routes/course/[publickKey].svelte"),
-	() => import("../../src/routes/verify/[trxref]/[refrence].svelte"),
->>>>>>> 7f68c6f07580e955b3ed5e9f4979587a03c36870
 	() => import("../../src/routes/login.svelte"),
 	() => import("../../src/routes/cart.svelte"),
 	() => import("../../src/routes/test.svelte")

@@ -18,8 +18,30 @@
 </script>
 
 <script>
-    export let courseDetail;
+     export let courseDetail;
+    import { page } from '$app/stores';
+   import axios from 'axios'
+import { onMount } from 'svelte';
+   import { useLoc } from '../../store/loc'
+
+     const pk = $page.params.publickKey;
+
+    onMount(async () => {
+        await useLoc
+    })
   
+    const addCart = async () => {
+        const config = {
+        headers: {
+            'user-token': ` ${$useLoc.detail.access_token}`
+        }
+    }
+
+         const response = await axios.post('https://aqueous-beyond-13704.herokuapp.com/addcart', pk, config)
+         console.log(response)
+     }
+
+    
 </script>
 
 <!-- <script>
@@ -151,6 +173,10 @@ import axios from 'axios';
             <!-- course corriculum -->
             <div class='my-s'>
                 <h3 class='px-10 pt-3 pb-3 font-bold text-2xl text-drblue'>Course Curriculum</h3>
+                <div>
+                    
+                  
+                </div>
                 
             </div>
          </div>
@@ -213,8 +239,8 @@ import axios from 'axios';
                </div> 
                  
              </div>
-             <div class='py-3 px-4  text-center  bg-drblue mt-3 rounded-xl text-white hover:bg-lgblue'>
-                <button>
+             <div  class='py-3 px-4  text-center  bg-drblue mt-3 rounded-xl text-white hover:bg-lgblue'>
+                <button on:click={addCart} >
                     Add To Cart
                 </button>
              </div>
