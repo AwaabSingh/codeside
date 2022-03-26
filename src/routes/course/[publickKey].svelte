@@ -12,6 +12,10 @@ let courseDetail = {}
 
     onMount(async () => {
         await useLoc
+
+        const response = await axios.get(`https://aqueous-beyond-13704.herokuapp.com/getcousebyid?coursePk=${pk}`)
+        // console.log(response);
+        courseDetail = response.data.detail
     })
   
     const addCart = async () => {
