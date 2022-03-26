@@ -18,17 +18,23 @@ onMount(async () => {
     
 })
 
+// const API_URL = 'https://aqueous-beyond-13704.herokuapp.com'
+// src={`${API_URL}/static/${course.banner}`}
 
+// export let cosId;
+// console.log(cosId)
 
 </script>
 
 <div class="max-w-sm font-Nunito">
+   <div class=''>
     <div class="bg-drlue relative shadow-lg hover:shadow-xl transition duration-500 rounded-lg ">
-      <a href={`/course/${course.id}`} >
-        <img class="rounded-t-lg" src='inst.jpeg' alt="" />
+      <a href={`/course/${course.publickKey}`} >
+        <img class="rounded-t-lg" src='/inst.jpeg' alt="" />
         <!-- <span on:click={cosId=course.publickKey}></span> -->
        
       </a>
+      
       <div class="pt-3 px-10 rounded-lg bg-white">
         <h6 class="text-gray-700 font-bold md:text-2xl text-md  hover:text-gray-900 hover:cursor-pointer">{course.title}</h6>
         <p class="text-gray-700 tracking-wide mb-3 line-clamp-3">{course.description}</p>
@@ -69,6 +75,7 @@ onMount(async () => {
           <i class='bx bx-heart'></i>
         </span>
       </div> -->
+    </div>
     </div>
   </div> 
 

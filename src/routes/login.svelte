@@ -57,6 +57,7 @@ const data = {}
           <a href="/#">
               <ion-icon name="logo-github" class="p-2 rounded-full text-2xl bg-gray-100 md hydrated" role="img" aria-label="logo github"></ion-icon>
           </a>
+          <!-- <a href={`/verify/?${trxref}&${reference}`}>h</a> -->
       </div>
     </div>
   </div>

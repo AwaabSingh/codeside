@@ -1,10 +1,14 @@
 import axios from 'axios'
 
+
 const API_URL = 'https://aqueous-beyond-13704.herokuapp.com';
 
 import { writable } from 'svelte/store'
 
+
 export const getCart = writable([])
+export const getCheckout = writable()
+export const deleteCart = writable(false)
 // export const addCart = writable([])
 
 export  const config = {
@@ -42,3 +46,10 @@ export  const config = {
      }
 }
 
+export const delCart = async (config, cosPk) => {
+    try {
+        const response = await axios.delete(API_URL + `deleteitem?courseKey=${cosPk}`, config)
+    } catch (error) {
+         console.log(error)
+    }
+}

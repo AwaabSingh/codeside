@@ -1,51 +1,66 @@
 <script>
-    export let open = false
-  </script>
-  
-  <!-- defines a CSS class `.open` when `open == true` -->
-  <button class:open on:click={() => open = !open}>
-    <!-- svg with 3 lines -->
-    <svg width=32 height=24>
-     <line id="top" x1=0 y1=2 x2=32 y2=2/>
-     <line id="middle" x1=0 y1=12 x2=24 y2=12/>
-     <line id="bottom" x1=0 y1=22 x2=32 y2=22/>
-    </svg>
-  </button>
+  export let open = false
+  export let onClick = () => {
+    open = !open
+  }
+  export let ariaLabel = 'toggle menu'
+  export let width  = 80
+</script>
 
-  <style>
-      svg {
-  min-height: 24px;
-  transition: transform 0.3s ease-in-out;
-}
+<button on:click={onClick} aria-expanded={open} aria-label={ariaLabel}>
+  <svg
+    class:open
+    viewBox="0 0 100 100"
+    fill="none"
+    stroke="currentColor"
+    stroke-width="5"
+    {width}
+  >
+    <path
+      class="top"
+      d="m 30,33 h 40 c 3.722839,0 7.5,3.126468 7.5,8.578427 0,5.451959 -2.727029,8.421573 -7.5,8.421573 h -20"
+    />
+    <path class="middle" d="m 30,50 h 40" />
+    <path
+      class="bottom"
+      d="m 70,67 h -40 c 0,0 -7.5,-0.802118 -7.5,-8.365747 0,-7.563629 7.5,-8.634253 7.5,-8.634253 h 20"
+    />
+  </svg>
+</button>
 
-svg line {
-  /* `currentColor` means inherit color from the text color */
-  stroke: currentColor;
-  stroke-width: 3;
-  transition: transform 0.3s ease-in-out
-}
-
-/* adjust the Z-index, so that the icon is on top of the sidebar */
-button {
-  z-index: 20;
-}
-
-.open svg {
-  transform: scale(0.7)
-}
-
-/* rotate the top line */
-.open #top {
-  transform: translate(6px, 0px) rotate(45deg)
-}
-
-/* hide the middle */
-.open #middle {
-  opacity: 0;
-}
-
-/* rotate the bottom line */
-.open #bottom {
-  transform: translate(-12px, 9px) rotate(-45deg)
-}
-  </style>
+<style>
+  :root {
+    --transition-duration: 400ms;
+  }
+  button {
+    cursor: pointer;
+    display: flex;
+    align-items: center;
+    overflow: hidden;
+  }
+  svg {
+    transition: transform var(--transition-duration);
+  }
+  .top {
+    stroke-dasharray: 40 160;
+    transition: stroke-dashoffset var(--transition-duration);
+  }
+  .middle {
+    transform-origin: 50%;
+    transition: transform var(--transition-duration);
+  }
+  .bottom {
+    stroke-dasharray: 40 85;
+    transition: stroke-dashoffset var(--transition-duration);
+  }
+  .open {
+    transform: rotate(45deg);
+  }
+  .open .top,
+  .open .bottom {
+    stroke-dashoffset: -64px;
+  }
+  .open .middle {
+    transform: rotate(90deg);
+  }
+</style>

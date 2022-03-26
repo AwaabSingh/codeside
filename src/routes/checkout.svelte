@@ -1,9 +1,48 @@
 <script>
+    import axios from 'axios'
+    import { useLoc } from '../store/loc'
+    import { onMount } from 'svelte'
+    import { getCheckout } from '../store/cartStore'
 
+    onMount( async () => {
+
+        //  let getCheckout;
+
+        await useLoc
+        
+        // haeders 
+        const config = {
+            headers: {
+                'user-token': `${$useLoc.detail.access_token}`
+            }
+        }
+
+        // checkout req
+        const { data } = await axios.get('https://aqueous-beyond-13704.herokuapp.com/checkout', config)
+
+        $getCheckout = data
+    })
+   
+    const cart = $useLoc.detail.cart
+    
 </script>
 
-<main class='md:mx-40'>
-    <div class=" p-5 bg-gray-800 rounded overflow-visible md:m-12 m-10">
+<main class='h-screen md:mx-40'>
+       {#if cart.length === 0}
+            <div class='text-center my-10 '>
+                 <h1 class='font-bold my-5 text-lgblue'>Ooops your cart is empty!</h1>
+                  <a href="/" class='bg-drblue px-3 py-3 rounded text-white hover:bg-lgblue'>Keep Shopping</a>
+            </div>
+          {:else}
+           {#if $getCheckout.status_code === 200}
+              <h3 class='text-center'>
+                  {$getCheckout.detail}
+              </h3>
+           {/if}
+           
+       {/if}
+
+    <!-- <div class=" p-5 bg-gray-800 rounded overflow-visible md:m-12 m-10">
          <span class="text-xl font-medium text-gray-100 block pb-3">Card Details</span>
           <span class="text-xs text-gray-400 ">Card Type</span>
         <div class="overflow-visible flex justify-between items-center mt-2">
@@ -23,5 +62,5 @@
             </div>
             <div class=""> <label class="text-xs text-gray-400">CVV</label> <input type="text" class="focus:outline-none w-full h-6 bg-gray-800 text-white placeholder-gray-300 text-sm border-b border-gray-600 py-4" placeholder="XXX"> </div>
         </div> <button class="h-12 w-full bg-blue-500 rounded focus:outline-none text-white hover:bg-blue-600">Check Out</button>
-    </div>
+    </div> -->
 </main>

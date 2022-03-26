@@ -1,23 +1,14 @@
-<script>
 
 
-// const navburger = ()=>{
-//   const nav = document.getElementById('nav')
-//   const icon = document.getElementById('icon')
-//   if(nav.classList.contains('nav-active') && icon.classList.contains('bx-x')){
-//       nav.classList.remove('nav-active')
-//       icon.classList.remove('bx-x')
-//       icon.classList.add('bx-menu')    
-//       return
-//   }
-//   nav.classList.add('nav-active')
-//   icon.classList.add('bx-x')
-// }
+
+<!-- <script>
+ let mobileNavOpened = false
+  const toggleMobileNav = () => mobileNavOpened = !mobileNavOpened;
 </script>
 
 
 
-<!-- <nav class='p-5 bg-white shadow md:flex md:items-center md:justify-between'>
+ <nav class='p-5 bg-white shadow md:flex md:items-center md:justify-between'>
     
         <div class='flex justify-between items-center'>
              <span class="text-2xl font-[Poppins] cursor-pointer">
@@ -25,17 +16,14 @@
                     <img class='h-10 inline ' src="/code_logo.png" alt="">
                 </a>
                  
-             </span> -->
+             </span>  -->
             
              <!-- <form class="relative text-gray-600 px-3">
                 <input type="search" name="serch" placeholder="Search" class="bg-white h-10 px-5 pr-10 rounded-full text-sm border border-gray-200 p-2 focus:outline-none focus:border-gray-500">
                 <button type="submit" class="absolute right-0 top-0 mt-3 mr-4">
                 </button>
               </form> -->
-             <!-- <span class="text-3x cursor-pointer md:hidden block mx-2"  >
-                 <ion-icon name="menu" on:click="{navburger}"></ion-icon>
-                </span>  -->
-                <!-- <div on:click="{navburger}" class="mobile-buger">
+                <!-- <div class="mobile-buger" on:click={toggleMobileNav} aria-hidden="true" >
                   <i id="icon" class='bx bx-menu md:hidden' ></i>
                 </div>
               
@@ -43,7 +31,7 @@
 
        
           
-        <ul id='nav' class='md:flex md:items-center z-[-1] md:z-auto md:static absolute bg-white w-full left-0 md:w-auto md:py-0 py-4 md-pl-0 pl-7 md:opacity-100 opacity-0 [-400px] transition-all ease-in duration-500' >
+        <ul class:mobileNavOpened={"dropdown-opened"} id='nav' class='md:flex md:items-center z-[-1] md:z-auto md:static absolute bg-white w-full left-0 md:w-auto md:py-0 py-4 md-pl-0 pl-7 md:opacity-100 opacity-0 [-400px] transition-all ease-in duration-500' >
             <div class='mx-4 my-6 md:my-0'>
             
            </div>
@@ -61,8 +49,16 @@
             </li>
         </ul> 
 </nav>  -->
+<script>
+import { onMount } from 'svelte';
+ import { useLoc } from '../store/loc'
 
-<nav class='border-b border-gray-200'>
+   onMount(async () => {
+      await useLoc
+   })
+</script>
+
+ <nav class='border-b border-gray-200'>
     <input type="checkbox" id="check">
     <label for="check" class="checkbtn">
       <i class="fas fa-bars"></i>
@@ -73,6 +69,7 @@
         </a>
     </span>
     <ul>
+      
         <li class=''>
             <a href="/login" class="text-xl bg-lgblue px-4 uppercase py-3 rounded-xl hover:bg-drblue shadow text-white">Sign In</a>
         </li>
@@ -84,9 +81,9 @@
                 <i class='bx bxs-cart-add icon'></i> 
             
             </a>
-        </li>
+      
     </ul>
-  </nav>
+  </nav> 
 
 <style> 
     .icon{
@@ -94,7 +91,8 @@
      color: #6363A3;
     }
     
-   nav{
+    
+    nav{
   background: #fff;
   height: 80px;
   width: 100%;
@@ -174,6 +172,8 @@ nav ul li a{
   #check:checked ~ ul{
     left: 0;
   }
-}  
-</style>
-  
+}   
+</style> 
+   
+
+

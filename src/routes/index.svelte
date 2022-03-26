@@ -26,8 +26,8 @@
 
 <script>
  import CourseCard from '$lib/CourseCard.svelte'
- import { Splide, SplideSlide } from '@splidejs/svelte-splide';
- import '@splidejs/splide/dist/css/themes/splide-default.min.css';
+//  import { Splide, SplideSlide } from '@splidejs/svelte-splide';
+//  import '@splidejs/splide/dist/css/themes/splide-default.min.css';
 
 export let courses;
 export let categories;
@@ -130,7 +130,7 @@ export let categories;
               </section>
         </div>
         <div class='m-12 hidden lg:block'>
-            <img src="/inst.jpeg" class='py-40 rounded-xl' alt="">
+            <img src="/inst.jpeg" class='py-40' alt="">
         </div>
    </div>
   </section>
@@ -194,5 +194,6 @@ export let categories;
      color: #6363A3;
      border-radius: 50%;
   }
+  
   
 </style>

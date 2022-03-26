@@ -1,18 +1,16 @@
 <script context='module'>
-    export async function load({ fetch, params }) {
-        console.log(params.id)
+    export async function load({ fetch, url }) {
+        console.log(url)
+       
       const res =await fetch(
           `https://aqueous-beyond-13704.herokuapp.com/allcourse`
       );
+      const course = await fetch(`https://aqueous-beyond-13704.herokuapp.com/getcousebyid?coursePk=${url.publickKey}`)
+      console.log(course)
 
-    //   const resId =await fetch(
-    //       `https://aqueous-beyond-13704.herokuapp.com/getcoursebyid/${params.publicKey}`
-    //   );
 
       const data = await res.json()
-    //   const dataId = await resId.json()
-
-    //   console.log(dataId);
+ 
       if(res.ok) {
           return {
               props: {
@@ -188,11 +186,11 @@ import { onMount } from "svelte";
                         Add To Cart
                     </button>
                  </div>
-                 <div class='py-3 px-4 text-center  bg-drblue mt-3 rounded-xl text-white hover:bg-lgblue'>
+                 <!-- <div class='py-3 px-4 text-center  bg-drblue mt-3 rounded-xl text-white hover:bg-lgblue'>
                     <a href="/cart"  >
                         Enroll Now
                     </a>
-                 </div>
+                 </div> -->
                     
                
              </div>
