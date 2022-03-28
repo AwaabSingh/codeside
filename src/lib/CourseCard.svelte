@@ -34,17 +34,18 @@ onMount(async () => {
     <a href="#" class="fa-regular fa-heart"></a>
   </div> -->
   <div class="panel2">
-    <a href="#" class="fa-regular fa-heart"></a>
+    <a href="#/" class="fa-regular fa-heart"></a>
   </div>
   <div class="info">
     <h3 class='mt-5 font-bold text-drblue text-2xl font-Nunito'>{course.title}</h3>
     <p class='mx-3 line-clamp-2 py-3 font-Nunito mb-2'>{course.description}</p>
     <div class="stars">
+      <span class='text-lgblue font-bold px-1'>4.5</span>
       <i class="fas fa-star "></i> 
       <i class="fas fa-star "></i> 
       <i class="fas fa-star "></i> 
       <i class="fas fa-star "></i> 
-      <span class='text-lgblue font-bold px-2'>4.5</span>
+     
     </div>
     <strong class="price text-drblue"><span class="mrp"># {course.price}</span></strong>
   </div>
