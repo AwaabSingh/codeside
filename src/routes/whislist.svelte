@@ -27,6 +27,8 @@ import CourseCard from '$lib/CourseCard.svelte'
        
 
     })
+
+   
 </script>
 
 <main class=' md:m-12'>
@@ -40,8 +42,8 @@ import CourseCard from '$lib/CourseCard.svelte'
     <div class='grid grid-cols-1 gap-4 md:grid-cols-2 lg:grid-cols-3 py-3 px-16'>
      
     {#each $getWish as wish}
-    <div class="max-w-sm font-Nunito">
-        <div class="bg-drlue  shadow-lg hover:shadow-xl transition duration-500 rounded-lg ">
+    <div class="max-w-sm font-Nunito relative">
+        <div class="bg-drlue   shadow-lg hover:shadow-xl transition duration-500 rounded-lg ">
           <a href='/#' >
             <img class="rounded-t-lg" src='inst.jpeg' alt="" />
            
@@ -67,18 +69,23 @@ import CourseCard from '$lib/CourseCard.svelte'
             </section>
         </div>
         <hr>
-        <div class='flex justify-between m-5 pb-3'>
+        <div class='flex justify-between my-3 pb'>
             <div class='px-3'>Tutor</div>
             <div class='px-3'>${wish.price}</div>
         </div>
+        <!-- <div class='bg-drblue text-center  py-2 rounded text-white'>
+          <button on:click={delCart}>Delete Wish</button>
+       </div> -->
+        
           
           
         
-          <!-- <div class="absolute top-2 left-2 py-2 px-4 bg-drblue text-white rounded-lg">
+           <!-- <div class="absolute top-2 left-2 py-2 px-4 bg-drblue text-white rounded-lg">
              <span class="text-md">Bestseller</span>
-           </div> -->
+           </div>  -->
         
         </div>
+      
       </div> 
     {/each}
    

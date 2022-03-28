@@ -66,13 +66,16 @@ export let categories;
     
           </div>
           
-        <div class='grid grid-cols-1 gap-4 md:grid-cols-2 lg:grid-cols-3 py-3 px-16'>
-           
+          
+        <!-- <div class='grid grid-cols-1 gap-4 md:grid-cols-2 lg:grid-cols-3 py-3 px-16'> -->
+            <section class="carousel font-Nunito">
+                <div class="carousel__container">
             {#each courses as course}    
             <CourseCard {course}/>
             {/each}
-       
-    </div>     
+        </div>
+    </section>
+    <!-- </div>      -->
 
   </section>
 
@@ -195,5 +198,46 @@ export let categories;
      border-radius: 50%;
   }
   
+  .carousel
+{
+	margin: 5px;
+	width: 100%;
+	overflow: scroll;
+	position: relative;
+	box-shadow: border-box;
+}
+
+.carousel__container
+{
+	white-space: nowrap;
+	margin: 40px 0px;
+	padding-bottom: 10px;
+}
+
+/* .carousel__container:hover 
+{
+	transform: scale(1.09);
+	opacity: 1;
+} */
+
+.carousel::-webkit-scrollbar
+{
+	height: 5px;
+}
+.carousel::-webkit-scrollbar-track
+{
+	-webkit-box-shadow:inset 0 0 6px rgba(0,0,0,0.26);
+	border-radius: 10px;
+}
+/* .carousel::-webkit-scrollbar-track-piece
+{
+	max-width: 100px;
+} */
+.carousel::-webkit-scrollbar-thumb
+{
+	border-radius: 20px;
+	background-color: #fff;
+	background-image: -webkit-gradient(linear,40% 0%,75% 84%, from(#4F4F86), to(#6363A3), color-stop(0.6, #4F4F86));
+}
   
 </style>

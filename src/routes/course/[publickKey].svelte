@@ -6,10 +6,11 @@ import { useLoc } from '../../store/loc'
 import { goto } from "$app/navigation";
 
 
-let pk =   $page.params.publickKey
+export let pk =   $page.params.publickKey
 let courseDetail = {}
 let cartData = {}
-let message ;
+let wishData = {}
+
    
 
 
@@ -25,8 +26,8 @@ let message ;
       try {
         const config = {
             headers:  {
-                               'user-token': ` ${$useLoc.detail.access_token}`,
-                               'content-type': 'application/json'
+            'user-token': ` ${$useLoc.detail.access_token}`,
+             'content-type': 'application/json'
                               }}
         cartData.courseKey = pk
         console.log(cartData);
@@ -35,17 +36,40 @@ let message ;
          if(response.data.status_code === 201){
              goto('/Sdashboard')
          } else {
-             message = 'Something went wrong'
+             alert('Something went wrong')
          }
         
       } catch (error) {
-        message = RangeError
+        console.log(error)
         
       }
         
      }
 
+     const addWish = async () => {
+       try {
+        const config = {
+            headers:  {
+            'user-token': ` ${$useLoc.detail.access_token}`,
+         }}
+
+        wishData.courseKey = pk
+        console.log(wishData);
+
+        const response = await axios.post('https://aqueous-beyond-13704.herokuapp.com/addwishlist', wishData, config)
+        console.log(response);
+
+        if(response.data.status_code === 201){
+             goto('/wishlist')
+         } else {
+             alert('Something went wrong')
+         }
+       } catch (error) {
+           console.log(error)
+       }
+     }
     
+
 </script>
 
 
@@ -87,7 +111,7 @@ let message ;
                     </div>
                 </li>
                 <li> <ion-icon name="people-circle-outline" role="img" class="md hydrated" aria-label="people circle outline"></ion-icon> 1200 Enrolled </li>
-            </ul>
+            </ul>z
             <ul class="lg:flex items-center text-gray-200">
                 <li> Created by <a href="#/" class="text-white fond-bold hover:underline hover:text-white"> Cyber Hero </a> </li>
                 <li> <span class="lg:block hidden mx-3 text-2xl">·</span> </li>
@@ -228,18 +252,25 @@ let message ;
                  
              </div>
             
-             <!-- <div  class='py-3 px-4  text-center  bg-drblue mt-3 rounded-xl text-white hover:bg-lgblue'>
+              {#if !$useLoc.detail.access_token}
+             <div  class='py-3 px-4  text-center  bg-drblue mt-3 rounded-xl text-white hover:bg-lgblue'>
                 <a href='/login'>
                     You need to be logged in
                 </a>
-             </div> -->
-            
-             <div  class='py-3 px-4  text-center  bg-drblue mt-3 rounded-xl text-white hover:bg-lgblue'>
+                
+             </div> 
+             {:else}
+             <div  class='py-2 px-2  text-center  bg-drblue mt-3 rounded-xl text-white hover:bg-lgblue'>
                 <button on:click={addCart} >
                     Add To Cart
                 </button>
              </div>
-            
+             <div  class='py-2 px-2  text-center  bg-drblue mt-3 rounded-xl text-white hover:bg-lgblue'>
+                <button on:click={addWish} >
+                    Add To Wish list
+                </button>
+             </div>
+             {/if}
              <!-- <div class='py-3 px-4 text-center  bg-drblue mt-3 rounded-xl text-white hover:bg-lgblue'>
                 <a href="/cart"  >
                     Enroll Now
