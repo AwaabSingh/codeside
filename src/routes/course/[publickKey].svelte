@@ -29,12 +29,11 @@ let wishData = {}
             'user-token': ` ${$useLoc.detail.access_token}`,
              'content-type': 'application/json'
                               }}
-        cartData.courseKey = pk
-        console.log(cartData);
+        cartData.courseKey = pk;
 
          const response = await axios.post('https://aqueous-beyond-13704.herokuapp.com/addcart', cartData, config)
          if(response.data.status_code === 201){
-             goto('/Sdashboard')
+             goto('/cart')
          } else {
              alert('Something went wrong')
          }
@@ -47,27 +46,30 @@ let wishData = {}
      }
 
      const addWish = async () => {
-       try {
+      try {
         const config = {
             headers:  {
             'user-token': ` ${$useLoc.detail.access_token}`,
-         }}
+             'content-type': 'application/x-www-form-urlencoded'
+                              }}
+        wishData.courseKey = pk;
 
-        wishData.courseKey = pk
-        console.log(wishData);
-
-        const response = await axios.post('https://aqueous-beyond-13704.herokuapp.com/addwishlist', wishData, config)
-        console.log(response);
-
-        if(response.data.status_code === 201){
-             goto('/wishlist')
-         } else {
-             alert('Something went wrong')
-         }
-       } catch (error) {
-           console.log(error)
-       }
+         const response = await axios.post('https://aqueous-beyond-13704.herokuapp.com/addwishlist', wishData, config)
+         console.log(response)
+        //  if(response.data.status_code === 201){
+        //      goto('/cart')
+        //  } else {
+        //      alert('Something went wrong')
+        //  }
+        
+      } catch (error) {
+        console.log(error)
+        
+      }
+        
      }
+
+     
     
 
 </script>
@@ -111,7 +113,7 @@ let wishData = {}
                     </div>
                 </li>
                 <li> <ion-icon name="people-circle-outline" role="img" class="md hydrated" aria-label="people circle outline"></ion-icon> 1200 Enrolled </li>
-            </ul>z
+            </ul>
             <ul class="lg:flex items-center text-gray-200">
                 <li> Created by <a href="#/" class="text-white fond-bold hover:underline hover:text-white"> Cyber Hero </a> </li>
                 <li> <span class="lg:block hidden mx-3 text-2xl">·</span> </li>

@@ -2,27 +2,38 @@
 <script>
 import { onMount } from 'svelte';
 import { useLoc } from '../store/loc'
-// import axios from 'axios'
+import axios from 'axios'
 import { addCart } from '../store/cartStore'
+// import PublickKey from '../routes/course/[publickKey].svelte';
 
   export let course;
-
+  let wishData = {}
+  
  
 
 onMount(async () => {
    await useLoc
     // console.log($useLoc.detail.access_token)
-
-    // get courses by  coursePk
-    // const { data } = await axios.get(`getcousebyid?coursePk=${coursePk}`)
-    
+  
 })
 
 // const API_URL = 'https://aqueous-beyond-13704.herokuapp.com'
 // src={`${API_URL}/static/${course.banner}`}
 
-// export let cosId;
-// console.log(cosId)
+// const goToWish = async (pk) => {
+//   const config = {
+//     headers: {
+//       'user-token': ` ${useLoc.detail.access_token}`,
+//       'content-type': 'application/x-www-form-urlencoded'
+//     }
+//   }
+
+//   wishData.courseKey = pk
+//         console.log(wishData);
+//     const { data } = await axios.post('https://aqueous-beyond-13704.herokuapp.com/addwishlist', wishData ,config)
+//     console.log(data)
+// }
+
 
 </script>
 
@@ -34,7 +45,7 @@ onMount(async () => {
     <a href="#" class="fa-regular fa-heart"></a>
   </div> -->
   <div class="panel2">
-    <a href="#/" class="fa-regular fa-heart"></a>
+    <a href="#/" class="fa-regular fa-heart"> </a>
   </div>
   <div class="info">
     <h3 class='mt-5 font-bold text-drblue text-2xl font-Nunito'>{course.title}</h3>
