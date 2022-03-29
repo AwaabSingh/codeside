@@ -50,7 +50,7 @@ let wishData = {}
         const config = {
             headers:  {
             'user-token': ` ${$useLoc.detail.access_token}`,
-             'content-type': 'application/x-www-form-urlencoded'
+             'content-type': 'application/x-www-form-urlencoded',
                               }}
         wishData.courseKey = pk;
 
