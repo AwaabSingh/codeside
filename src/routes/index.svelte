@@ -122,8 +122,8 @@ export let categories;
        <!-- Top Categories -->
    <section>
         
-     <div class='md:m-12 m-3 p-8 font-Nunito border rounded-xl border-drblue'>
-        <h4 class='text-center my-5 px-8 font-bold text-3xl md:text-4xl  py-8 text-lgblue'>Top Categories</h4>
+     <div class='md:m-12 m-3  p-3 md:p-8 font-Nunito border rounded-xl border-drblue'>
+        <h4 class='text-center my-5 px-8 font-bold text-xl md:text-4xl  py-8 text-lgblue'>Top Categories</h4>
        
     <div class="grid lg:grid-cols-4 md:grid-cols-3 grid-cols-2 gap-4 mt-3">
        {#each categories as category}
@@ -131,7 +131,7 @@ export let categories;
           <div class="absolute w-full h-3/4 -bottom-12 bg-gradient-to-b from-transparent to-gray-800 z-10">
           </div>
           <img src="/inst.jpeg" class="absolute w-full h-full object-cover" alt="">
-          <div class="absolute bottom-2 left-3 font-bold w-full p-3 text-white z-20  text-xl hover:text-lgblue hover:text-2xl"> {category.name} </div>
+          <div class="absolute bottom-2 left-3 font-bold w-full p-3 text-white z-20 text-sm  md:text-xl hover:text-lgblue md:hover:text-2xl"> {category.name} </div>
       </a>
        {/each}
       
@@ -142,7 +142,7 @@ export let categories;
        <section class="md:my-20 mx-5 mt-20 md:px-20">
         <div class='flex justify-between flex-col md:flex-row'>
             <div class=''>
-                <img src="/inst.jpeg" class="w rounded-xl" alt="">
+                <img src="/Instructor.png" class="w rounded-xl" alt="">
             </div>
             <div class='md:mx-20 md:my-10'>
                 <h3 class="md:text-3xl text-xl font-Nunito font-bold px-3 py-3 text-drblue"> Become an Instructor</h3>
@@ -156,17 +156,17 @@ export let categories;
 
       <section class="md:my-20 mx-5 mt-10 md:px-20">
         <div class='flex justify-between flex-col md:flex-row'>
-            <div class=''>
-                <img src="/inst.jpeg" class="w rounded-xl" alt="">
-            </div>
-            <div class='md:mx-20 md:my-10'>
+          
+            <div class='md:mx-20 md:my-10 order-1 md:order-0'>
                 <h3 class="md:text-3xl text-xl font-Nunito font-bold px-3 py-3 text-drblue"> Become a Student</h3>
                <p class='text-sm '>Join millons of people from around the world learning together.online learing is as easy and natural as chatting</p>
                 <div class='flex items-center text-center my-14 md:mx-20 mx-12'>
                     <a href ="/" class='py-5 px-8 bg-transparent text-sm md:text-2xl text-drblue hover:bg-drblue border hover:text-white border-drblue rounded-xl font-bold'>Apply Now</a>
                 </div>
             </div>
-            
+            <div class='order-0 md:order-1'>
+                <img src="/student.png" class="w rounded-xl" alt="">
+            </div>
        </div>
       </section>
 

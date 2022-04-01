@@ -63,7 +63,7 @@
                                         {#each $getCart as cart}
                                         <div class="flex justify-between items-center mt-6 pt-6">
                                             <div class="flex items-center"> 
-                                                <img src="/inst.jpeg" width="60" class="rounded-full">
+                                                <img src="/inst.jpeg" alt='img' width="60" class="rounded-full">
                                                 <div class="flex flex-col ml-3"> <span class="md:text-md font-medium">{cart.title}</span> 
                                                     <!-- <span class="text-xs font-light text-gray-400">#41551</span>  -->
                                                 </div>
@@ -80,15 +80,17 @@
                                             </div>
                                         </div>
                                         {/each}
+                                    
                                         <div class="flex justify-between items-center mt-6 pt-6 border-t px-2">
                                             <div class="flex items-center"> 
                                                 <i class="fa fa-arrow-left text-sm pr-2"></i> <a href='/' class="text-md font-medium text-blue-500">Continue Shopping</a> 
                                             </div>
                                             <div class="flex justify-center items-end px">
                                                  <span class="text-sm font-medium text-gray-400 mr-1">Subtotal:</span>
-                                                  <span class="text-lg font-bold text-gray-800 "> $24.90</span> 
+                                                  <span class="text-lg font-bold text-gray-800 "> #24.90</span> 
                                             </div>
                                         </div>
+                                        
                                         {/if}
                                     </div>
                                     
